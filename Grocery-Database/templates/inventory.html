@@ -1,0 +1,18 @@
+<h1>Inventory</h1>
+
+<table border="1">
+<tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Stock</th>
+</tr>
+
+{% for item in inventory %}
+<tr>
+    <td>{{ item.Product_ID }}</td>
+    <td>{{ item.Name }}</td>
+    <td>{{ item.Stock_Level }}</td>
+</tr>
+{% endfor %}
+
+</table>

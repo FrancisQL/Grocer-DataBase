@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=grocery_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=super_secret_password
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=grocery_db
+      - MYSQL_ROOT_PASSWORD=super_secret_password
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customers</title>
+</head>
+
+<body>
+
+<h1>Customers</h1>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+</tr>
+
+{% for customer in customers %}
+<tr>
+    <td>{{ customer.Customer_ID }}</td>
+    <td>{{ customer.Name }}</td>
+    <td>{{ customer.Address }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h2>Add Customer</h2>
+
+<form method="POST">
+    Name: <input type="text" name="name">
+    Address: <input type="text" name="address">
+    <button type="submit">Add</button>
+</form>
+
+</body>
+</html>
