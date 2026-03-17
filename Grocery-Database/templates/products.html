@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
 <!-- <nav>
     <a href="index.html">Home</a>
     <a href="customers.html">Customers</a>
@@ -12,6 +13,7 @@
     <a href="orders.html">Orders</a>
     <a href="products.html">Products</a>
 </nav> -->
+
 <nav>
     <a href="{{ url_for('index') }}">Home</a>
     <a href="{{ url_for('customers') }}">Customers</a>
@@ -20,32 +22,24 @@
     <a href="{{ url_for('products') }}">Products</a>
 </nav>
 
-<h1>Add Order</h1>
+<h1>Products</h1>
+
+<h1>Add Product</h1>
 <form method="POST">
     Name: <input type="text" name="name">
-    Customer: <input type="text" name="customer_id">
-    type: <input type="text" name="type">
-    total: <intput type="text" name="total">
     <button type="submit">Add</button>
 </form>
 
-
-<h1>Orders</h1>
-
 <table border="1">
 <tr>
-    <th>Order ID</th>
-    <th>Customer ID</th>
-    <th>Type</th>
-    <th>Total</th>
+    <th>Product ID</th>
+    <th>name</th>
 </tr>
 
-{% for order in orders %}
+{% for product in products %}
 <tr>
-    <td>{{ order.id }}</td>
-    <td>{{ order.customer_id }}</td>
-    <td>{{ order.type }}</td>
-    <td>{{ order.total }}</td>
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
 </tr>
 {% endfor %}
 

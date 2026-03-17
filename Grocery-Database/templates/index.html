@@ -8,14 +8,30 @@
 <body>
 
 <h1>Grocery Store Database System</h1>
-
 <p>Group 4 Database Project</p>
 
+<!-- <nav>
+    <a href="index.html">Home</a>
+    <a href="customers.html">Customers</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="orders.html">Orders</a>
+    <a href="products.html">Products</a>
+</nav> -->
+
 <nav>
-    <a href="/customers">Customers</a>
-    <a href="/inventory">Inventory</a>
-    <a href="/orders">Orders</a>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('customers') }}">Customers</a>
+    <a href="{{ url_for('inventory') }}">Inventory</a>
+    <a href="{{ url_for('orders') }}">Orders</a>
+    <a href="{{ url_for('products') }}">Products</a>
 </nav>
+
+<hr>
+
+<h2>Welcome</h2>
+<p>This is the Grocery Store Database System homepage. 
+    <Br> Plan to do some querying here
+</p>
 
 </body>
 </html>

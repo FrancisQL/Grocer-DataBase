@@ -2,9 +2,37 @@
 <html>
 <head>
     <title>Customers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
+
+<!-- <nav>
+    <a href="index.html">Home</a>
+    <a href="customers.html">Customers</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="orders.html">Orders</a>
+    <a href="products.html">Products</a>
+</nav> -->
+
+
+
+<nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('customers') }}">Customers</a>
+    <a href="{{ url_for('inventory') }}">Inventory</a>
+    <a href="{{ url_for('orders') }}">Orders</a>
+    <a href="{{ url_for('products') }}">Products</a>
+</nav>
+
+
+<h1>Add Customer</h1>
+<form method="POST">
+    Name: <input type="text" name="name">
+    Address: <input type="text" name="address">
+    <button type="submit">Add</button>
+</form>
+
 
 <h1>Customers</h1>
 
@@ -17,21 +45,14 @@
 
 {% for customer in customers %}
 <tr>
-    <td>{{ customer.Customer_ID }}</td>
-    <td>{{ customer.Name }}</td>
-    <td>{{ customer.Address }}</td>
+    <td>{{ customer.id }}</td>
+    <td>{{ customer.name }}</td>
+    <td>{{ customer.address }}</td>
 </tr>
 {% endfor %}
 
 </table>
 
-<h2>Add Customer</h2>
-
-<form method="POST">
-    Name: <input type="text" name="name">
-    Address: <input type="text" name="address">
-    <button type="submit">Add</button>
-</form>
 
 </body>
 </html>
